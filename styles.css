@@ -1,0 +1,338 @@
+@font-face {
+	font-family: 'Comic Sans MS';
+	src: url("assets/comicsans.ttf");
+  }
+
+body {
+	background-color: #1c1c1c;
+	font-family: 'Comic Sans MS', cursive;
+	cursor: default;
+}
+
+/* Menu opened by the burger */
+.overlay {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.99);
+	overflow-x: hidden;
+	transition: 0.5s;
+}
+
+.overlay-content {
+	position: relative;
+	top: 25%;
+	width: 100%;
+	text-align: center;
+	margin-top: 40px;
+}
+
+.overlay a {
+	padding: 8px;
+	text-decoration: none;
+	font-size: 36px;
+	color: #fff;
+	display: block;
+	transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+	color: #f1f1f1;
+}
+
+.overlay .closebtn {
+	position: absolute;
+	top: 20px;
+	right: 45px;
+	font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+	.overlay a {
+		font-size: 20px
+	}
+
+	.overlay .closebtn {
+		font-size: 40px;
+		top: 15px;
+		right: 35px;
+	}
+}
+
+/* The burger menu on the header, its fixed :P */
+.burger {
+	color: white;
+	font-size:40px;
+	cursor:pointer;
+	display: block;
+	float: left;
+	margin-left: 5px;
+	margin-top: -8px;
+}
+
+/* The blue header */
+.header {
+	border-radius: 10px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	color: white;
+	text-align: center;
+	background-color: #007cdb;
+	font-family: 'Comic Sans MS', cursive;
+	font-size: 20px;
+}
+
+/* The div that contains everything */
+.selection {
+	border-radius: 25px;
+	background-color: #2e2e2e;
+	color: white;
+	margin: 2% 2% 0% 2%;
+	height: 100%;
+	width: auto;
+	padding-bottom: 4%;
+}
+
+/* "Select desired symbols" Header */
+.select {
+	text-align:center;
+	font-size: 25px
+}
+
+/* The labels for Numbers, Letters, and Symbols checkboxes */
+label {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 20px;
+	font-family: 'Comic Sans MS', cursive;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* The table the holds and alligns the checkboxes */
+table {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2%
+}
+
+table td {
+	padding-left: 15px ;
+}
+
+/* the checkboxes */
+.container input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+/* checkmark stylization */
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	border-radius: 5px;
+	background-color: #eee;
+}
+
+.container:hover input~.checkmark {
+	background-color: #ccc;
+}
+
+.container input:checked~.checkmark {
+	background-image: linear-gradient(to bottom right, #2196F3, #1b76bf);
+}
+
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+.container input:checked~.checkmark:after {
+	display: block;
+}
+
+.container .checkmark:after {
+	left: 9px;
+	top: 5px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+/* div containing the length slider */
+.slidecontainer {
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 5%;
+}
+
+/* stylization for the slider */
+.slider {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 15px;
+	border-radius: 5px;
+	background: #565656;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+}
+
+.slider:hover {
+	opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	border-radius: 30%;
+	background-image: linear-gradient(to bottom right, #2196F3, #1b76bf);
+	cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	border-radius: 30%;
+	background-image: linear-gradient(to bottom right, #2196F3, #1b76bf);
+	cursor: pointer;
+}
+
+/* The display for the sliders value aka"Password Length" */
+.length {
+	text-align: center;
+	font-family: 'Comic Sans MS', cursive;
+	font-size: 20px;
+}
+
+/* Generate Password Button */
+.button {
+	background-image: linear-gradient(to bottom right, #2196F3, #135185);
+	border: 2px solid black;
+	border-radius: 15px;
+	color: white;
+	padding: 16px 15px;
+	text-align: center;
+	font-size: 16px;
+	font-family: 'Comic Sans MS', cursive;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 3%;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	width: 240px;
+}
+
+/* The input box which displays the generated password */
+.display {
+	background-image: linear-gradient(to bottom right, #565656, #404040);
+	border: 2px solid black;
+	border-radius: 15px;
+	color: white;
+	padding: 40px 32px;
+	text-align: center;
+	font-size: 30px;
+	font-family: 'Comic Sans MS', cursive;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	margin-top: 3%;
+	width: 80%;
+	height: 10%;
+	cursor: default;
+}
+
+/* Remove border on click */
+.display:focus {
+	outline: none !important;
+}
+
+/* div containg Copy Text button */
+.tooltip {
+    position: relative;
+    display: block;
+    margin-left: auto;
+	margin-right: auto;
+    margin-top: 3%;
+  }
+
+/* popup for copyclipboard */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 250px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 6px;
+    padding: 15px;
+    position: absolute;
+	margin-left: -95px;
+	margin-right: auto;
+    z-index: 1;
+    bottom: 510%;
+    opacity: 0;
+    transition: opacity 0.3s;
+	word-wrap: break-word;
+  }
+
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+/* Copy Text Button */
+  .button2 {
+	background-image: linear-gradient(to bottom right, #2196F3, #135185);
+	border: 2px solid black;
+	border-radius: 10px;
+	color: white;
+	padding: 5px 15px;
+	text-align: center;
+	font-size: 16px;
+	font-family: 'Comic Sans MS', cursive;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	width: 140px;
+}

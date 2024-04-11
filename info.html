@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="styles.css">
+      <title>Password Generator</title>
+      <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+   </head>
+   <body>
+      <div id="Menu" class="overlay">
+         <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+         <div class="overlay-content">
+            <a href="https://scaling-giggle-r9999v7v47gcxp4r-8080.app.github.dev/password.html">Home</a>
+            <a href="assets/vid.mp4">Nothing</a>
+         </div>
+      </div>
+      <div class="header">
+         <span style="font-size:40px;cursor:pointer; position: fixed; top:0; left:20px;" onclick="openMenu()">&#9776;</span>
+         Password Generator
+      </div>
+      <div class="selection">
+         <ul style="text-align:center; padding-top: 15%; padding-bottom: 14%; list-style-type: none">
+            Credits: <br> <br>
+            <li style="text-align:center;">Me</li>
+            <li style="text-align:center;">ChatGPT</li>
+         </ul>
+      </div>
+      <script>
+         function openMenu() {
+           document.getElementById("Menu").style.width = "100%";
+         }
+
+         function closeMenu() {
+           document.getElementById("Menu").style.width = "0%";
+         }
+      </script>
+   </body>
+</html>
